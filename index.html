@@ -2,13 +2,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Letters</title>
+    <link rel="stylesheet" href="style.css">
     <script src="drag_and_drop.js" charset="utf-8"></script>
 
   </head>
   <body>
-    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-    <img id="drag1" src="download.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
+    <div class="row1">
+        <div class="r1_column" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="a.jpg" draggable="true" ondragstart="drag(event)" alt="A" id="A" style="width:90%">
+        </div>
+        <div class="r1_column" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img src="e.jpg" draggable="true" ondragstart="drag(event)" alt="E" id="E" style="width:90%">
+        </div>
+    </div>
+
+    <div class="row4">
+      <div class="r4_column" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+
   </body>
 </html>

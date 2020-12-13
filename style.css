@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.r1_column {
+  float: left;
+  width: 12.5%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.r4_column {
+  float: left;
+  width: 12.5%;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* Clearfix (clear floats) */
+.row4::after {
+  content: "";
+  clear: both;
+  display: table;
+}
