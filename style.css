@@ -28,3 +28,17 @@
   clear: both;
   display: table;
 }
+
+.r5_column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* Clearfix (clear floats) */
+.row5::after {
+  content: "";
+  clear: both;
+  display: table;
+}
