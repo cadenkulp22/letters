@@ -16,9 +16,10 @@ function init() {
     $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'block'+letters[i] ).appendTo( '#letterBank' ).draggable( {
       containment: '#content',
       stack: '#letterBank div',
+      helper: 'clone',
       cursor: 'move',
       snap: true,
-      revert: true
+      revert: true,
     } );
   }
 
@@ -44,5 +45,6 @@ function handleLetterDrop(event, ui) {
   ui.draggable.addClass( 'correct' );
   //ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
   ui.draggable.draggable( 'option', 'revert', false );
+  ui.draggable.clone().appendTo($(this));
   $('#resetButton').show(); // show the reset button when letters have been dropped
 }

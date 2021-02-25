@@ -7,9 +7,7 @@ body {
 
 /* Give headings their own font */
 
-h1, h2, h3, h4 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-}
+
 
 /* Main content area */
 
@@ -19,24 +17,6 @@ h1, h2, h3, h4 {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-}
-
-/* Header/footer boxes */
-
-.wideBox {
-  clear: both;
-  text-align: center;
-  margin: 70px;
-  padding: 10px;
-  background: #ebedf2;
-  border: 1px solid #333;
-}
-
-.wideBox h1 {
-  font-weight: bold;
-  margin: 20px;
-  color: #666;
-  font-size: 1.5em;
 }
 
 /* Slots for final card positions */
@@ -54,7 +34,7 @@ h1, h2, h3, h4 {
 }
 
 #whiteboard, #letterBank {
-  width: 910px;
+  width: inherit;
   height: 120px;
   padding: 20px;
   border: 2px solid #333;
@@ -72,15 +52,23 @@ h1, h2, h3, h4 {
   float: left;
   width: 58px;
   height: 78px;
+  /*
   padding: 10px;
   padding-top: 40px;
   padding-bottom: 0;
+  */
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 0 0 0 10px;
-  background: #fff;
+  /* card attributes */
+  background: #666;
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+  text-align: center;
+  vertical-align: middle;
 }
 
 #whiteboard div:first-child, #letterBank div:first-child {
@@ -89,17 +77,6 @@ h1, h2, h3, h4 {
 
 #whiteboard div.hovered {
   background: #aaa;
-}
-
-#whiteboard div {
-  border-style: dashed;
-}
-
-#letterBank div {
-  background: #666;
-  color: #fff;
-  font-size: 50px;
-  text-shadow: 0 0 3px #000;
 }
 
 #letterBank div.ui-draggable-dragging {
