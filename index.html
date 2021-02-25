@@ -4,36 +4,20 @@
     <meta charset="utf-8">
     <title>Letters</title>
     <link rel="stylesheet" href="style.css">
-    <script src="drag_and_drop.js" charset="utf-8"></script>
-    <script src="make_words.js" charset="utf-8"></script>
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="draganddrop.js"></script>
   </head>
   <body>
 
-    <div class="grid-container-letters">
-      <div class="item1" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="images/a.jpg" draggable="true" ondragstart="drag(event)" alt="A" id="A">
-      </div>
-      <div class="item2" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="images/b.jpg" draggable="true" ondragstart="drag(event)" alt="B" id="B">
-      </div>
-      <div class="item3" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="images/c.jpg" draggable="true" ondragstart="drag(event)" alt="C" id="C">
-      </div>
-      <div class="item4" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <img src="images/d.jpg" draggable="true" ondragstart="drag(event)" alt="D" id="D">
-      </div>
-      <div class="item5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      <div class="item6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      <div class="item7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-      <div class="item8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="content">
+      <div id="letterBank"></div>
+      <div id="whiteboard"></div>
     </div>
 
-    <div class="grid-container-words" ondrop="drop(event)" ondragover="allowDrop(event)">
-
+    <div id="resetButton">
+      <button type="button" name="reset" onclick="init()">Reset</button>
     </div>
-
-
 
   </body>
 </html>
