@@ -23,16 +23,6 @@ function init() {
     } );
   }
 
-  // Create the whiteboard for word creation
-  // var words = [ 'one', 'two', 'three', 'four' ];
-  // for ( var i=1; i<=4; i++ ) {
-  //   $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#whiteboard' ).droppable( {
-  //     accept: '#letterBank div',
-  //     hoverClass: 'hovered',
-  //     drop: handleLetterDrop
-  //   } );
-  // }
-
   $('#whiteboard').droppable( {
    accept: '#letterBank div',
    hoverClass: 'hovered',
@@ -42,9 +32,14 @@ function init() {
 }
 
 function handleLetterDrop(event, ui) {
-  ui.draggable.addClass( 'correct' );
+  var letterCopy = $(ui.helper).clone().removeClass('ui-draggable');
+  letterCopy.draggable();
+  $(this).append(letterCopy);
+
+  //ui.draggable.addClass( 'correct' );
   //ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
   ui.draggable.draggable( 'option', 'revert', false );
-  ui.draggable.clone().appendTo($(this));
+  //ui.draggable.clone().appendTo($(this));
   $('#resetButton').show(); // show the reset button when letters have been dropped
+
 }

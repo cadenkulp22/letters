@@ -48,21 +48,39 @@ body {
 
 /* Individual cards and slots */
 
-#whiteboard div, #letterBank div {
+#letterBank div {
   float: left;
   width: 58px;
   height: 78px;
-  /*
   padding: 10px;
   padding-top: 40px;
   padding-bottom: 0;
-  */
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 0 0 0 10px;
   /* card attributes */
+  background: #666;
+  color: #fff;
+  font-size: 50px;
+  text-shadow: 0 0 3px #000;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#whiteboard div {
+  float: left;
+  width: 58px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
   background: #666;
   color: #fff;
   font-size: 50px;
