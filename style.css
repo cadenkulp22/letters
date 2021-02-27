@@ -43,19 +43,19 @@ h1, h2, h3, h4 {
 
 /* Slots for final card positions */
 
-#cardSlots {
+#whiteboard {
   margin: 50px auto 0 auto;
   background: #ddf;
 }
 
 /* The initial pile of unsorted cards */
 
-#cardPile {
+#letterBank {
   margin: 0 auto;
   background: #ffd;
 }
 
-#cardSlots, #cardPile {
+#whiteboard, #letterBank {
   width: 910px;
   height: 120px;
   padding: 20px;
@@ -70,7 +70,7 @@ h1, h2, h3, h4 {
 
 /* Individual cards and slots */
 
-#cardSlots div, #cardPile div {
+#whiteboard div, .letters {
   float: left;
   width: 58px;
   height: 78px;
@@ -85,43 +85,41 @@ h1, h2, h3, h4 {
   background: #fff;
 }
 
-#cardSlots div:first-child, #cardPile div:first-child {
+#whiteboard div:first-child, #letterBank div:first-child {
   margin-left: 0;
 }
 
-#cardSlots div.hovered {
+#whiteboard div.hovered {
   background: #aaa;
 }
 
-#cardSlots div {
+.spaces {
+  float: left;
+  width: 58px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 0 0 0 10px;
+  background: #fff;
   border-style: dashed;
 }
 
-#cardPile div {
+.letters {
   background: #666;
   color: #fff;
   font-size: 50px;
   text-shadow: 0 0 3px #000;
 }
 
-#cardPile div.ui-draggable-dragging {
+.letters.ui-draggable-dragging {
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
 }
-
-/* Individually coloured cards */
-
-#card1.correct { background: red; }
-#card2.correct { background: brown; }
-#card3.correct { background: orange; }
-#card4.correct { background: yellow; }
-#card5.correct { background: green; }
-#card6.correct { background: cyan; }
-#card7.correct { background: blue; }
-#card8.correct { background: indigo; }
-#card9.correct { background: purple; }
-#card10.correct { background: violet; }
 
 
 /* "You did it!" message */
