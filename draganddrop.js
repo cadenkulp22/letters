@@ -17,22 +17,44 @@ function init() {
   $('#letterBank').html( '' );
   $('#whiteboard').html( '' );
 
+  // var letters = [ 'A', 'B', 'C', 'D' ];
+  // // create spaces and actual letter blocks
+  // for ( var i=0; i<4; i++ ) {
+  //   $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo( '#letterBank' );
+  //   $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+  //     containment: '#content',
+  //     stack: '#letterBank div',
+  //     snap: true,
+  //     cursor: 'move',
+  //     revert: true
+  //   } );
+  // }
+
   var letters = [ 'A', 'B', 'C', 'D' ];
-  // create spaces for letter blocks
+  // create spaces and actual letter blocks within space div
   for ( var i=0; i<4; i++ ) {
-    $('<div>' + letters[i] + '</div>').data( 'letter', i ).addClass('spaces').attr( 'id', 'space'+letters[i] ).appendTo( '#letterBank' );
+    $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#letterBank').append(
+        $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+          containment: '#content',
+          stack: '#letterBank div',
+          snap: true,
+          cursor: 'move',
+          revert: true
+        } ));
   }
 
-  // create letter blocks
-  for ( var i=0; i<4; i++ ) {
-    $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
-      containment: '#content',
-      stack: '#letterBank div',
-      snap: true,
-      cursor: 'move',
-      revert: true
-    } );
-  }
+
+
+  // // create letter blocks
+  // for ( var i=0; i<4; i++ ) {
+  //   $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+  //     containment: '#content',
+  //     stack: '#letterBank div',
+  //     snap: true,
+  //     cursor: 'move',
+  //     revert: true
+  //   } );
+  // }
 
   // // Create the card slots
   // var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
@@ -55,6 +77,7 @@ function init() {
 function handleCardDrop( event, ui ) {
   //var slotNumber = $(this).data( 'letter' );
   var letterValue = ui.draggable.data( 'letter' );
+  //var letterID = ui.draggable.attr('id');
 
   createNewLetter(letterValue);
 
@@ -63,16 +86,18 @@ function handleCardDrop( event, ui ) {
   //$(this).droppable( 'disable' );
   //ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
   ui.draggable.draggable( 'option', 'revert', false );
-  ui.draggable.attr('id', 'card'+letterValue+'correct');
+  ui.draggable.attr('id', 'letter'+letterValue+'correct');
 
 }
 
-function createNewLetter(letter) {
-  $('<div>' + letter + '</div>').data( 'letter', letter ).addClass('letters').attr( 'id', 'letter'+letter ).appendTo( '#letterBank' ).draggable( {
+function createNewLetter(letterValue) {
+  var spaceID = '#space'+letterValue;
+  $(spaceID).append(
+    $('<div>' + letterValue + '</div>').data( 'letter', letterValue ).addClass('letters').attr( 'id', 'letter'+letterValue ).appendTo( '#letterBank' ).draggable( {
     containment: '#content',
     stack: '#letterBank div',
     //helper: 'clone',
     cursor: 'move',
     revert: true
-  } );
+  }) );
 }
