@@ -1,45 +1,91 @@
+var correctCards = 0;
 $( init );
 
 function init() {
 
-  // hide the reset button, until letters are dragged
-  $('#resetButton').hide();
+  // Hide the success message
+  $('#successMessage').hide();
+  $('#successMessage').css( {
+    left: '580px',
+    top: '250px',
+    width: 0,
+    height: 0
+  } );
 
-  // reset the Letters
-  $('#letterBank').html('');
-  $('#whiteboard').html('');
+  // Reset the game
+  correctCards = 0;
+  $('#cardPile').html( '' );
+  $('#cardSlots').html( '' );
 
-  // create array of Letters
-  var letters = ['A', 'B', 'C', 'D'];
-  for (var i=0; i < 4; i++) {
-    // creates a div for each letter, id=blockN where N is current letter
-    $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'block'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+  // Create the pile of shuffled cards
+  var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+  numbers.sort( function() { return Math.random() - .5 } );
+
+  for ( var i=0; i<10; i++ ) {
+    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
-      stack: '#letterBank div',
-      helper: 'clone',
+      stack: '#cardPile div',
+      //helper: 'clone',
       cursor: 'move',
-      snap: true,
-      revert: true,
+      revert: true
     } );
   }
 
-  $('#whiteboard').droppable( {
-   accept: '#letterBank div',
-   hoverClass: 'hovered',
-   drop: handleLetterDrop
-  } );
+  // Create the card slots
+  var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
+  for ( var i=1; i<=10; i++ ) {
+    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+  }
 
 }
 
-function handleLetterDrop(event, ui) {
-  var letterCopy = $(ui.helper).clone().removeClass('ui-draggable');
-  letterCopy.draggable();
-  $(this).append(letterCopy);
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
 
-  //ui.draggable.addClass( 'correct' );
-  //ui.draggable.position( { of: $(this), my: 'center', at: 'center' } );
-  ui.draggable.draggable( 'option', 'revert', false );
-  //ui.draggable.clone().appendTo($(this));
-  $('#resetButton').show(); // show the reset button when letters have been dropped
+  // If the card was dropped to the correct slot,
+  // change the card colour, position it directly
+  // on top of the slot, and prevent it being dragged
+  // again
 
+  if ( slotNumber == cardNumber ) {
+    createNew(cardNumber);
+
+    ui.draggable.addClass( 'correct' );
+    //ui.draggable.draggable( 'disable' );
+    //$(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+    correctCards++;
+    ui.draggable.attr('id', 'card'+cardNumber+'correct');
+  }
+
+  // If all the cards have been placed correctly then display a message
+  // and reset the cards for another go
+
+  if ( correctCards == 10 ) {
+    $('#successMessage').show();
+    $('#successMessage').animate( {
+      left: '380px',
+      top: '200px',
+      width: '400px',
+      height: '100px',
+      opacity: 1
+    } );
+  }
+
+}
+
+function createNew(letter) {
+  $('<div>' + letter + '</div>').data( 'number', letter ).attr( 'id', 'card'+letter ).appendTo( '#cardPile' ).draggable( {
+    containment: '#content',
+    stack: '#cardPile div',
+    //helper: 'clone',
+    cursor: 'move',
+    revert: true
+  } );
 }
