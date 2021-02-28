@@ -16,7 +16,7 @@ body {
 }
 
 #whiteboard, #letterBank {
-  height: 120px;
+  height: 200px;
   padding: 20px;    /*margin between border and where actual letters will be*/
   border: 2px solid #333;
   border-radius: 10px;
