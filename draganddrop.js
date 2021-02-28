@@ -4,88 +4,94 @@ $( init );
 function init() {
 
   // Hide the success message
-  $('#successMessage').hide();
-  $('#successMessage').css( {
-    left: '580px',
-    top: '250px',
-    width: 0,
-    height: 0
-  } );
+  $('#resetButton').hide();
 
-  // Reset the game
-  correctCards = 0;
-  $('#cardPile').html( '' );
-  $('#cardSlots').html( '' );
+  // Reset the letters
+  $('#letterBank').html( '' );
+  $('#whiteboard').html( '' );
 
-  // Create the pile of shuffled cards
-  var numbers = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-  numbers.sort( function() { return Math.random() - .5 } );
+  // var letters = [ 'A', 'B', 'C', 'D' ];
+  // // create spaces and actual letter blocks
+  // for ( var i=0; i<4; i++ ) {
+  //   $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo( '#letterBank' );
+  //   $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+  //     containment: '#content',
+  //     stack: '#letterBank div',
+  //     snap: true,
+  //     cursor: 'move',
+  //     revert: true
+  //   } );
+  // }
 
-  for ( var i=0; i<10; i++ ) {
-    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
-      containment: '#content',
-      stack: '#cardPile div',
-      //helper: 'clone',
-      cursor: 'move',
-      revert: true
-    } );
+  var letters = [ 'A', 'B', 'C', 'D' ];
+  // create spaces and actual letter blocks within space div
+  for ( var i=0; i<4; i++ ) {
+    $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#letterBank').append(
+        $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+          containment: '#content',
+          stack: '#letterBank div',
+          snap: true,
+          cursor: 'move',
+          revert: true
+        } ));
   }
 
-  // Create the card slots
-  var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
-  for ( var i=1; i<=10; i++ ) {
-    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
-      accept: '#cardPile div',
-      hoverClass: 'hovered',
-      drop: handleCardDrop
-    } );
-  }
+
+
+  // // create letter blocks
+  // for ( var i=0; i<4; i++ ) {
+  //   $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+  //     containment: '#content',
+  //     stack: '#letterBank div',
+  //     snap: true,
+  //     cursor: 'move',
+  //     revert: true
+  //   } );
+  // }
+
+  // // Create the card slots
+  // var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
+  // for ( var i=1; i<=10; i++ ) {
+  //   $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+  //     accept: '#cardPile div',
+  //     hoverClass: 'hovered',
+  //     drop: handleCardDrop
+  //   } );
+  // }
+
+  $('#whiteboard').droppable( {
+    accept: '#letterBank div',
+    hoverClass: 'hovered',
+    drop: handleCardDrop
+  });
 
 }
 
 function handleCardDrop( event, ui ) {
-  var slotNumber = $(this).data( 'number' );
-  var cardNumber = ui.draggable.data( 'number' );
+  //var slotNumber = $(this).data( 'letter' );
+  $('#resetButton').show();
+  var letterValue = ui.draggable.data( 'letter' );
+  //var letterID = ui.draggable.attr('id');
 
-  // If the card was dropped to the correct slot,
-  // change the card colour, position it directly
-  // on top of the slot, and prevent it being dragged
-  // again
+  createNewLetter(letterValue);
 
-  if ( slotNumber == cardNumber ) {
-    createNew(cardNumber);
-
-    ui.draggable.addClass( 'correct' );
-    //ui.draggable.draggable( 'disable' );
-    //$(this).droppable( 'disable' );
-    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
-    ui.draggable.draggable( 'option', 'revert', false );
-    correctCards++;
-    ui.draggable.attr('id', 'card'+cardNumber+'correct');
-  }
-
-  // If all the cards have been placed correctly then display a message
-  // and reset the cards for another go
-
-  if ( correctCards == 10 ) {
-    $('#successMessage').show();
-    $('#successMessage').animate( {
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '100px',
-      opacity: 1
-    } );
-  }
+  ui.draggable.addClass( 'correct' );
+  //ui.draggable.draggable( 'disable' );
+  //$(this).droppable( 'disable' );
+  //ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+  ui.draggable.draggable( 'option', 'revert', false );
+  ui.draggable.attr('id', 'letter'+letterValue+'correct');
 
 }
 
-function createNew(letter) {
-  $('<div>' + letter + '</div>').data( 'number', letter ).attr( 'id', 'card'+letter ).appendTo( '#cardPile' ).draggable( {
+function createNewLetter(letterValue) {
+  var spaceID = '#space'+letterValue;
+  $(spaceID).append(
+    $('<div>' + letterValue + '</div>').data( 'letter', letterValue ).addClass('letterBlocks').attr( 'id', 'letter'+letterValue ).appendTo( '#letterBank' ).draggable( {
     containment: '#content',
-    stack: '#cardPile div',
+    stack: '#letterBank div',
     //helper: 'clone',
     cursor: 'move',
     revert: true
-  } );
+  }) );
 }
