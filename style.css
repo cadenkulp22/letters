@@ -47,7 +47,7 @@ body {
 /* Individual cards and slots */
 
 /* might be able to take out whiteboard div part */
-#whiteboard div, .letters, .spaces {
+#whiteboard div, .letterBlocks, .spaces {
   float: left;
   width: 60px;
   height: 60px;
@@ -59,18 +59,21 @@ body {
   background: #fff;
 }
 
+/*
 #whiteboard div:first-child, #letterBank div:first-child {
   margin-left: 0;
 }
+*/
 
 .spaces {
   border-style: dashed;
   display: grid;
+  position: relative;
   place-items: center;
   grid-template-areas: "inners";
 }
 
-.letters {
+.letterBlocks {
   background: #666;
   color: #fff;
   font-size: 40px;
@@ -79,7 +82,7 @@ body {
   grid-area: inners;
 }
 
-.letters.ui-draggable-dragging {
+.letterBlocks.ui-draggable-dragging {
   -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);

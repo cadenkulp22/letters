@@ -34,7 +34,7 @@ function init() {
   // create spaces and actual letter blocks within space div
   for ( var i=0; i<4; i++ ) {
     $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#letterBank').append(
-        $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
+        $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
           containment: '#content',
           stack: '#letterBank div',
           snap: true,
@@ -93,7 +93,7 @@ function handleCardDrop( event, ui ) {
 function createNewLetter(letterValue) {
   var spaceID = '#space'+letterValue;
   $(spaceID).append(
-    $('<div>' + letterValue + '</div>').data( 'letter', letterValue ).addClass('letters').attr( 'id', 'letter'+letterValue ).appendTo( '#letterBank' ).draggable( {
+    $('<div>' + letterValue + '</div>').data( 'letter', letterValue ).addClass('letterBlocks').attr( 'id', 'letter'+letterValue ).appendTo( '#letterBank' ).draggable( {
     containment: '#content',
     stack: '#letterBank div',
     //helper: 'clone',
