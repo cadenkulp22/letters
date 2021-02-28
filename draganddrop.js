@@ -91,6 +91,7 @@ function createNewLetter(letterValue) {
     containment: '#content',
     stack: '#letterBank div',
     //helper: 'clone',
+    snap: true,
     cursor: 'move',
     revert: true
   }) );
