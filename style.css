@@ -1,7 +1,6 @@
 /* Add some margin to the page and set a default font and colour */
 
 body {
-  margin: 30px;
   font-family: "Georgia", serif;
   line-height: 1.8em;
   color: #333;
@@ -11,37 +10,33 @@ body {
 
 #content {
   margin: 80px 70px;
+  width: 90%;
   text-align: center;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+#whiteboard, #letterBank {
+  height: 120px;
+  padding: 20px;    /*margin between border and where actual letters will be*/
+  border: 2px solid #333;
+  border-radius: 10px;
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
 
 /* Slots for final card positions */
 
 #whiteboard {
-  margin: 50px auto 0 auto;   /*between letterBank and whiteboard*/
+  margin: 50px 0 0 0;   /*between letterBank and whiteboard*/
   background: #ddf;   /*background color*/
 }
 
 /* The initial pile of unsorted cards */
 
 #letterBank {
-  margin: 0 auto;
+  margin: 0;
   background: #ffd;   /*background color*/
-}
-
-#whiteboard, #letterBank {
-  width: 90%;
-  height: 120px;
-  padding: 20px;    /*margin between border and where actual letters will be*/
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
-  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
 }
 
 /* Individual cards and slots */
@@ -52,8 +47,6 @@ body {
   width: 60px;
   height: 60px;
   border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 0 0 0 10px;
   background: #fff;
@@ -83,26 +76,5 @@ body {
 }
 
 .letterBlocks.ui-draggable-dragging {
-  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
-}
-
-/* "You did it!" message */
-#successMessage {
-  position: absolute;
-  left: 580px;
-  top: 250px;
-  width: 0;
-  height: 0;
-  z-index: 100;
-  background: #dfd;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  padding: 20px;
 }

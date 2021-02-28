@@ -4,16 +4,9 @@ $( init );
 function init() {
 
   // Hide the success message
-  $('#successMessage').hide();
-  $('#successMessage').css( {
-    left: '580px',
-    top: '250px',
-    width: 0,
-    height: 0
-  } );
+  $('#resetButton').hide();
 
-  // Reset the game
-  correctCards = 0;
+  // Reset the letters
   $('#letterBank').html( '' );
   $('#whiteboard').html( '' );
 
@@ -76,6 +69,7 @@ function init() {
 
 function handleCardDrop( event, ui ) {
   //var slotNumber = $(this).data( 'letter' );
+  $('#resetButton').show();
   var letterValue = ui.draggable.data( 'letter' );
   //var letterID = ui.draggable.attr('id');
 
