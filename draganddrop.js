@@ -3,25 +3,14 @@ $( init );
 
 function init() {
 
-  // Hide the success message
+  // Hide the reset button
   $('#resetButton').hide();
 
-  // Reset the letters
+  // Reset the letters when button is clicked
   $('#letterBank').html( '' );
   $('#whiteboard').html( '' );
 
-  // var letters = [ 'A', 'B', 'C', 'D' ];
-  // // create spaces and actual letter blocks
-  // for ( var i=0; i<4; i++ ) {
-  //   $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo( '#letterBank' );
-  //   $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
-  //     containment: '#content',
-  //     stack: '#letterBank div',
-  //     snap: true,
-  //     cursor: 'move',
-  //     revert: true
-  //   } );
-  // }
+  // create 3 rows for the letters
   for ( var i=0; i<3; i++ ) {
     $('<div class="row"></div>').attr( 'id', 'row'+(i+1) ).appendTo('#letterBank');
   }
@@ -67,23 +56,32 @@ function init() {
     drop: handleCardDrop
   });
 
+  $('#letterBank').droppable( {
+    accept: '#letterBank div',
+    drop: deleteCard
+  });
+
 }
 
-function handleCardDrop( event, ui ) {
-  //var slotNumber = $(this).data( 'letter' );
+function handleCardDrop(event, ui) {
   $('#resetButton').show();
-  var letterValue = ui.draggable.data( 'letter' );
-  //var letterID = ui.draggable.attr('id');
 
+  var letterValue = ui.draggable.data( 'letter' );
   createNewLetter(letterValue);
 
   ui.draggable.addClass( 'correct' );
   //ui.draggable.draggable( 'disable' );
   //$(this).droppable( 'disable' );
-  //ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
   ui.draggable.draggable( 'option', 'revert', false );
+  //ui.draggable.draggable( 'option', 'containment', '#whiteboard' );
   ui.draggable.attr('id', 'letter'+letterValue+'correct');
 
+}
+
+function deleteCard(event, ui) {
+  var letterValue = ui.draggable.data( 'letter' );
+  createNewLetter(letterValue);
+  ui.draggable.remove();
 }
 
 function createNewLetter(letterValue) {
