@@ -1,8 +1,8 @@
 /* Add some margin to the page and set a default font and colour */
 
 body {
-  font-family: "Georgia", serif;
-  color: #333;
+  font-family: "Walter Turncoat", cursive;
+  font-weight: bold;
 }
 
 /* Main content area */
@@ -18,23 +18,26 @@ body {
 #whiteboard, #letterBank {
   height: 360px;
   padding: 20px;    /*margin between border and where actual letters will be*/
-  border: 2px solid #333;
+  /*border: 2px solid #333;*/
   border-radius: 10px;
-  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  /*box-shadow: 0 0 .3em rgba(0, 0, 0, .8);*/
 }
 
 /* Slots for final card positions */
 
 #whiteboard {
-  margin: 50px 0 0 0;   /*between letterBank and whiteboard*/
+  margin: 0 0 0 0;   /*between letterBank and whiteboard*/
   background: #ddf;   /*background color*/
+  background-image: url("images/chalkboard.jpg");
+  background-size: cover;
+  border: 20px solid #764A34;
 }
 
 /* The initial pile of unsorted cards */
 
 #letterBank {
   margin: 0;
-  background: #ffd;   /*background color*/
+  background: #C0C0C0;   /*background color*/
 }
 
 .row {
@@ -58,16 +61,22 @@ body {
   float: left;
   width: 90px;
   height: 90px;
-  border: 10px solid #333;
+  border: 10px solid #00BFFF;
   border-radius: 10px;
   margin: 5px;
-  background: #666;
-  color: #fff;
-  font-size: 50px;
-  text-shadow: 0 0 3px #000;
+  background: white;
+  color: #00BFFF;
+  font-size: 70px;
+  /*text-shadow: 0 0 3px #000;*/
   text-align: center;
   vertical-align: middle;
   line-height: 90px;
+}
+
+#spaceA, #letterA, #letterAcorrect, #spaceE, #letterE, #letterEcorrect, #spaceI, #letterI, #letterIcorrect, #spaceO, #letterO, #letterOcorrect, #spaceU, #letterU, #letterUcorrect {
+  background: white;
+  color: #FF2400;
+  border: 10px solid #FF2400;
 }
 
 /*
