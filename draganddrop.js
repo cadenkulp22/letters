@@ -33,7 +33,7 @@ function init() {
       $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#row1').append(
           $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#row1' ).draggable( {
             containment: '#content',
-            stack: '#letterBank div',
+            stack: '#content',
             snap: true,
             cursor: 'move',
             revert: true
@@ -43,7 +43,7 @@ function init() {
       $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#row2').append(
           $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#row2' ).draggable( {
             containment: '#content',
-            stack: '#letterBank div',
+            stack: '#content',
             snap: true,
             cursor: 'move',
             revert: true
@@ -53,36 +53,13 @@ function init() {
       $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#row3').append(
           $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#row3' ).draggable( {
             containment: '#content',
-            stack: '#letterBank div',
+            stack: '#content',
             snap: true,
             cursor: 'move',
             revert: true
           } ));
     }
   }
-
-
-
-  // // create letter blocks
-  // for ( var i=0; i<4; i++ ) {
-  //   $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letters').attr( 'id', 'letter'+letters[i] ).appendTo( '#letterBank' ).draggable( {
-  //     containment: '#content',
-  //     stack: '#letterBank div',
-  //     snap: true,
-  //     cursor: 'move',
-  //     revert: true
-  //   } );
-  // }
-
-  // // Create the card slots
-  // var words = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten' ];
-  // for ( var i=1; i<=10; i++ ) {
-  //   $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
-  //     accept: '#cardPile div',
-  //     hoverClass: 'hovered',
-  //     drop: handleCardDrop
-  //   } );
-  // }
 
   $('#whiteboard').droppable( {
     accept: '#letterBank div',
@@ -114,8 +91,7 @@ function createNewLetter(letterValue) {
   $(spaceID).append(
     $('<div>' + letterValue + '</div>').data( 'letter', letterValue ).addClass('letterBlocks').attr( 'id', 'letter'+letterValue ).appendTo( '#letterBank' ).draggable( {
     containment: '#content',
-    stack: '#letterBank div',
-    //helper: 'clone',
+    stack: '#content',
     snap: true,
     cursor: 'move',
     revert: true
