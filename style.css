@@ -13,31 +13,34 @@ body {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-}
-
-#whiteboard, #letterBank {
-  height: 270px;
-  padding: 10px;    /*margin between border and where actual letters will be*/
-  /*border: 2px solid #333;*/
-  border-radius: 10px;
-  /*box-shadow: 0 0 .3em rgba(0, 0, 0, .8);*/
-}
-
-/* Slots for final card positions */
-
-#whiteboard {
-  margin: 0 0 0 0;   /*between letterBank and whiteboard*/
-  background: #ddf;   /*background color*/
   background-image: url("images/chalkboard.jpg");
   background-size: cover;
   border: 20px solid #764A34;
 }
 
+#whiteboard, #letterBank {
+  padding: 10px;    /*margin between border and where actual letters will be*/
+  /*border: 2px solid #333;*/
+  /*box-shadow: 0 0 .3em rgba(0, 0, 0, .8);*/
+  /* border-left: 20px solid #764A34;
+  border-right: 20px solid #764A34; */
+}
+
+/* Slots for final card positions */
+
+#whiteboard {
+  height: 400px;
+  margin: 0 0 0 0;   /*between letterBank and whiteboard*/
+  /* border-bottom: 20px solid #764A34; */
+}
+
 /* The initial pile of unsorted cards */
 
 #letterBank {
+  height: 270px;
   margin: 0;
-  background: #C0C0C0;   /*background color*/
+  /* border-top: 20px solid #764A34; */
+
 }
 
 .row {
@@ -99,4 +102,17 @@ body {
 
 .letterBlocks.ui-draggable-dragging {
   box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+/* Style eraser "button" */
+.eraser {
+  background-color: #333;
+  border-color: #333;
+  border-radius: 6px;
+  border-bottom: 7px solid #777;
+  font-size: 30px;
+  color: white;
+  position: relative;
+  left: 1350px;
+  bottom: 10px;
 }

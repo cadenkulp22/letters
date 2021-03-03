@@ -4,7 +4,7 @@ $( init );
 function init() {
 
   // Hide the reset button
-  $('#resetButton').hide();
+  // $('#eraser').hide();
 
   // Reset the letters when button is clicked
   $('#letterBank').html( '' );
@@ -64,7 +64,7 @@ function init() {
 }
 
 function handleCardDrop(event, ui) {
-  $('#resetButton').show();
+  // $('#eraser').show();
 
   var letterValue = ui.draggable.data( 'letter' );
   createNewLetter(letterValue);
