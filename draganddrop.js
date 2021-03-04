@@ -4,7 +4,7 @@ $( init );
 function init() {
 
   // Hide the reset button
-  // $('#eraser').hide();
+  $('.eraser').hide();
 
   // Reset the letters when button is clicked
   $('#letterBank').html( '' );
@@ -64,7 +64,7 @@ function init() {
 }
 
 function handleCardDrop(event, ui) {
-  // $('#eraser').show();
+  $('.eraser').show();
 
   var letterValue = ui.draggable.data( 'letter' );
   createNewLetter(letterValue);
@@ -95,3 +95,29 @@ function createNewLetter(letterValue) {
     revert: true
   }) );
 }
+
+// animation code if needed
+// var id = null;
+// function myMove() {
+//   var elem = document.getElementById("animate");
+//   var pos = 0;
+//   var deg = 45;
+//   elem.style.webkitTransform = 'rotate('+deg+'deg)';
+//   elem.style.mozTransform    = 'rotate('+deg+'deg)';
+//   elem.style.msTransform     = 'rotate('+deg+'deg)';
+//   elem.style.oTransform      = 'rotate('+deg+'deg)';
+//   elem.style.transform       = 'rotate('+deg+'deg)';
+//   clearInterval(id);
+//   id = setInterval(frame, 5);
+//   function frame() {
+//     if (pos == 100) {
+//       clearInterval(id);
+//       init();
+//     }
+//     else {
+//       pos++;
+//       elem.style.bottom = pos + 'px';
+//       elem.style.left = pos + 'px';
+//     }
+//   }
+// }
