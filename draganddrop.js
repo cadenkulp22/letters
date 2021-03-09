@@ -96,7 +96,11 @@ function createNewLetter(letterValue) {
   }) );
 }
 
-// animation code if needed
+function setLevelZero() {
+  return 0;
+}
+
+// animation code for eraser if needed
 // var id = null;
 // function myMove() {
 //   var elem = document.getElementById("animate");
