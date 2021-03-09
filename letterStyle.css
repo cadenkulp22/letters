@@ -6,7 +6,7 @@
 
 #content {
   font-family: "Comic Sans MS", cursive;
-  font-weight: bold;
+
   margin: 10px auto;
   width: auto;
   min-width: 1000px;
@@ -19,6 +19,7 @@
 }
 
 #whiteboard, #letterBank {
+  font-weight: bold;
   padding: 10px;    /*margin between border and where actual letters will be*/
   /*border: 2px solid #333;*/
   /*box-shadow: 0 0 .3em rgba(0, 0, 0, .8);*/
@@ -115,7 +116,7 @@
   border-color: #333;
   border-radius: 6px;
   border-bottom: 7px solid #777;
-  font-family: "Walter Turncoat", cursive;
+  font-family: "Comic Sans MS", cursive;
   font-size: 30px;
   color: white;
   position: absolute;
