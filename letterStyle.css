@@ -1,13 +1,12 @@
 /* Add some margin to the page and set a default font and colour */
 
-body {
-  font-family: "Walter Turncoat", cursive;
-  font-weight: bold;
-}
+
 
 /* Main content area */
 
 #content {
+  font-family: "Comic Sans MS", cursive;
+  font-weight: bold;
   margin: 10px auto;
   width: auto;
   min-width: 1000px;
