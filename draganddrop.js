@@ -104,18 +104,8 @@ function initBoard(level) {
             } ));
       }
     }
-
-    $('#whiteboard').droppable( {
-      accept: '#letterBank div',
-      hoverClass: 'hovered',
-      drop: handleCardDrop
-    });
-
-    $('#letterBank').droppable( {
-      accept: '#letterBank div',
-      drop: deleteCard
-    });
   }
+
   else if (level == 1) {    // user wants level 1, consonant combos
     // create 3 rows for the letters
     for ( var i=0; i<3; i++ ) {
@@ -125,7 +115,8 @@ function initBoard(level) {
     var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'sh', 'th' ];
     // create spaces and actual letter blocks within space div
     for ( var i=0; i<28; i++ ) {
-      if (i < 8) {    // first 8 letters: A, B, C, D, E, F, G, H
+      if (i < 13) {    // first 8 letters: A, B, C, D, E, F, G, H
+        document.getElementById("row1").style.width = "1170px";
         $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#row1').append(
             $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#row1' ).draggable( {
               containment: '#content',
@@ -135,7 +126,8 @@ function initBoard(level) {
               revert: true
             } ));
       }
-      else if ((i >= 8) && (i < 18)) {    // next 10 letters: I, J, K, L, M, N, O, P, Q, R
+      else if ((i >= 13) && (i < 26)) {    // next 10 letters: I, J, K, L, M, N, O, P, Q, R
+        document.getElementById("row2").style.width = "1170px";
         $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#row2').append(
             $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#row2' ).draggable( {
               containment: '#content',
@@ -146,6 +138,7 @@ function initBoard(level) {
             } ));
       }
       else {    // last 8 letters: S, T, U, V, W, X, Y, Z
+        document.getElementById("row3").style.width = "180px";
         $('<div class="spaces">' + letters[i] + '</div>').data( 'letter', letters[i] ).attr( 'id', 'space'+letters[i] ).appendTo('#row3').append(
             $('<div>' + letters[i] + '</div>').data( 'letter', letters[i] ).addClass('letterBlocks').attr( 'id', 'letter'+letters[i] ).appendTo( '#row3' ).draggable( {
               containment: '#content',
@@ -157,17 +150,19 @@ function initBoard(level) {
       }
     }
 
-    $('#whiteboard').droppable( {
-      accept: '#letterBank div',
-      hoverClass: 'hovered',
-      drop: handleCardDrop
-    });
 
-    $('#letterBank').droppable( {
-      accept: '#letterBank div',
-      drop: deleteCard
-    });
   }
+
+  $('#whiteboard').droppable( {
+    accept: '#letterBank div',
+    hoverClass: 'hovered',
+    drop: handleCardDrop
+  });
+
+  $('#letterBank').droppable( {
+    accept: '#letterBank div',
+    drop: deleteCard
+  });
 }
 
 // animation code for eraser if needed
