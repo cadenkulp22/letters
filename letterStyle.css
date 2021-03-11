@@ -30,7 +30,7 @@
 /* Slots for final card positions */
 
 #whiteboard {
-  height: 275px;
+  height: 325px;
   margin: 0 0 0 0;   /*between letterBank and whiteboard*/
   /* border-bottom: 20px solid #764A34; */
 }
@@ -38,24 +38,36 @@
 /* The initial pile of unsorted cards */
 
 #letterBank {
-  height: 270px;
+  height: 240px;  /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 3 (num rows) */
   margin: 0;
   /* border-top: 20px solid #764A34; */
 
 }
 
 .row {
-  height: 90px;
+  height: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
 }
 
 #row1, #row3 {
-  width: 720px;
+  width: 640px;     /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 8 (num blocks in row) */
   margin: 0 auto;
 }
 
 #row2 {
-  width: 900px;
+  width: 800px;   /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 10 (num blocks in row) */
   margin: 0 auto;
+}
+
+#row4 {
+  float: left;
+  width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+  height: 80px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+}
+
+#row5 {
+  float: right;
+  width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+  height: 80px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
 }
 
 /* Individual cards and slots */
@@ -63,21 +75,27 @@
 /* might be able to take out whiteboard div part */
 #whiteboard div, .letterBlocks, .spaces {
   float: left;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 10px solid #00BFFF;
   border-radius: 10px;
   margin: 5px;
   background: white;
   color: #00BFFF;
-  font-size: 45px;
+  font-size: 35px;
   /*text-shadow: 0 0 3px #000;*/
   text-align: center;
   vertical-align: middle;
-  line-height: 60px;
+  line-height: 50px;
 }
 
 #spaceA, #letterA, #letterAcorrect, #spaceE, #letterE, #letterEcorrect, #spaceI, #letterI, #letterIcorrect, #spaceO, #letterO, #letterOcorrect, #spaceU, #letterU, #letterUcorrect {
+  background: white;
+  color: #FF2400;
+  border: 10px solid #FF2400;
+}
+
+#spaceee, #letteree, #lettereecorrect, #spaceoi, #letteroi, #letteroicorrect, #spaceoy, #letteroy, #letteroycorrect, #spaceai, #letterai, #letteraicorrect, #spaceay, #letteray, #letteraycorrect {
   background: white;
   color: #FF2400;
   border: 10px solid #FF2400;
@@ -107,11 +125,11 @@
 
 #resetButton {
   height: 50px;
-  position: relative;
 }
 
 /* Style eraser "button" */
 .eraser {
+  float: right;
   background-color: #333;
   border-color: #333;
   border-radius: 6px;
@@ -119,5 +137,4 @@
   font-family: "Comic Sans MS", cursive;
   font-size: 30px;
   color: white;
-  position: absolute;
 }
