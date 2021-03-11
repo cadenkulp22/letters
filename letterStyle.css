@@ -48,13 +48,18 @@
   height: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
 }
 
-#row1, #row3 {
-  width: 640px;     /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 8 (num blocks in row) */
+#row1 {
+  width: 1040px;     /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 13 (num blocks in row) */
   margin: 0 auto;
 }
 
 #row2 {
-  width: 800px;   /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 10 (num blocks in row) */
+  width: 1040px;   /* (5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5) * 13 (num blocks in row) */
+  margin: 0 auto;
+}
+
+#row3 {
+  width: 1040px;     /* dummy input */
   margin: 0 auto;
 }
 
