@@ -1,6 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   /* font-family: "Walter Turncoat", cursive; */
   font-family: "Comic Sans MS", cursive;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  background: #42455a;
 }
 
 ul {
