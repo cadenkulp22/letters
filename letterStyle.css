@@ -94,7 +94,7 @@
   line-height: 50px;
 }
 
-#spaceA, #letterA, #letterAcorrect, #spaceE, #letterE, #letterEcorrect, #spaceI, #letterI, #letterIcorrect, #spaceO, #letterO, #letterOcorrect, #spaceU, #letterU, #letterUcorrect {
+#spacea, #lettera, #letteracorrect, #spacee, #lettere, #letterecorrect, #spacei, #letteri, #lettericorrect, #spaceo, #lettero, #letterocorrect, #spaceu, #letteru, #letterucorrect {
   background: white;
   color: #FF2400;
   border: 10px solid #FF2400;
@@ -104,6 +104,12 @@
   background: white;
   color: #FF2400;
   border: 10px solid #FF2400;
+}
+
+#spaceer, #letterer, #letterercorrect   {
+  background: white;
+  color: purple;
+  border: 10px solid purple;
 }
 
 /*
