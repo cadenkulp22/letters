@@ -8,41 +8,67 @@ body {
   font-family: "Comic Sans MS", cursive;
 }
 
+/* NAVBAR */
+
+.topnav {
+  overflow: hidden;
+  background-color: #05386b;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #edf5e1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #8ee4af;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #379683;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* HOME */
+
 .home-container {
   height: 100%;
   width: 100%;
   padding-top: 15px;
   background: #5cdb95;
   text-align: center;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #05386b;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #8ee4af;
-}
-
-.active {
-  background-color: #edf5e1;
-  color: #05386b;
 }
 
 .logo {
@@ -74,6 +100,8 @@ li a:hover:not(.active) {
   height: auto;
 }
 
+/* TOOLS */
+
 .tools-container {
   height: 100%;
   width: 100%;
@@ -89,13 +117,13 @@ li a:hover:not(.active) {
 }
 
 .tools-container p {
-  margin: 10px;
+  margin: 20px;
+  font-size: large;
 }
 
+/* ABOUT */
+
 .about-container {
-  /* height: 100%;
-  width: 100%;
-  text-align: center; */
   box-sizing: border-box;
 }
 
@@ -107,9 +135,6 @@ li a:hover:not(.active) {
 .col {
   padding: 20px;
   width: 50%;
-  /* width: 50%;
-  float: left;
-  background: #379683; */
   display: table-cell;
   text-align: center;
 }
@@ -121,8 +146,13 @@ li a:hover:not(.active) {
   }
 }
 
+#about-title {
+  width: 30%;
+}
+
 .col h1 {
   color: #edf5e1;
+  font-size: 50px;
 }
 
 .col p {
@@ -130,6 +160,30 @@ li a:hover:not(.active) {
   font-size: large;
 }
 
+#about-desc p {
+  padding: 5px 0;
+}
+
+.features {
+  margin: auto 0;
+}
+
 .features img {
-  width: 25%;
+  padding: 15px 0 5px;
+  width: 50%;
+}
+
+.features p {
+  font-size: x-large;
+}
+
+.education {
+  display: inline-block;
+  width: 50%;
+  float: left;
+}
+
+.teacher {
+  display: inline-block;
+  width: 50%;
 }

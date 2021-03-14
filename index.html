@@ -4,18 +4,31 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>TeachableTools</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script> -->
   </head>
   <body>
 
-    <div class="topnav">
-      <ul>
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="letters.html">Letters</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+    <div class="topnav" id="myTopnav">
+      <a class="active" href="index.html">Home</a>
+      <a href="letters.html">Letters</a>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
 
     <div class="home-container">
       <div class="logo">
@@ -29,23 +42,27 @@
     </div>
 
     <div class="tools-container">
-      <h1><span style="color: #5cdb95">OUR</span> TOOLS</h1>
+      <h1><span style="color: #5cdb95">YOUR</span> TOOLS</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
 
     <div class="about-container">
       <div class="col-container">
-        <div class="col" style="background: #379683">
+        <div id="about-title" class="col" style="background: #379683">
           <h1>ABOUT US</h1>
           <div class="features">
-            <img src="images/graduation.jpg" alt="">
-            <p>Education Driven</p>
-            <img src="images/teacher.jpg" alt="">
-            <p>Teacher Inspired</p>
+            <div class="education">
+              <img src="images/graduation.jpg" alt="">
+              <p>Education Driven</p>
+            </div>
+            <div class="teacher">
+              <img src="images/teacher.jpg" alt="">
+              <p>Teacher Inspired</p>
+            </div>
           </div>
         </div>
-        <div class="col" style="background: #8ee4af; text-align: left;">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div id="about-desc" class="col" style="background: #8ee4af; text-align: left;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
     </div>

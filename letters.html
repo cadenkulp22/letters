@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>Letters</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="letterStyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
     <script type="text/javascript" src="draganddrop.js"></script>
   </head>
   <body>
 
-    <div class="topnav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="letters.html">Letters</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a class="active" href="letters.html">Letters</a>
+      <a href="#about">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
     </div>
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
 
 
     <div id="content">
 
       <div class="boardnav">
-        <ul>
-          <li><a id="board0" href="#" onclick="initBoard(0)">Alphabet</a></li>
-          <li><a id="board1" href="#" onclick="initBoard(1)">Board 1</a></li>
-          <li><a id="board2" href="#" onclick="initBoard(2)">Board 2</a></li>
-          <li><a id="board3" href="#" onclick="initBoard(3)">Board 3</a></li>
-          <li><a id="board4" href="#" onclick="initBoard(4)">Board 4</a></li>
-        </ul>
+        <a id="board0" href="#" onclick="initBoard(0)">Alphabet</a>
+        <a id="board1" href="#" onclick="initBoard(1)">Board 1</a>
+        <a id="board2" href="#" onclick="initBoard(2)">Board 2</a>
+        <a id="board3" href="#" onclick="initBoard(3)">Board 3</a>
+        <a id="board4" href="#" onclick="initBoard(4)">Board 4</a>
       </div>
 
       <div id="letterBank"> </div>
