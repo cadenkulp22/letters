@@ -8,9 +8,10 @@ body {
   font-family: "Comic Sans MS", cursive;
 }
 
-.container {
+.home-container {
   height: 100%;
   width: 100%;
+  padding-top: 15px;
   background: #5cdb95;
   text-align: center;
 }
@@ -45,18 +46,90 @@ li a:hover:not(.active) {
 }
 
 .logo {
-  margin: 15px auto 0;
+  margin: 0 auto 0;
   width: 425px;
   height: 266px;
 }
 
-img {
+.home-container img {     /* apply to logo and design */
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
-p {
+.home-container h1 {
   color: #edf5e1;
   font-size: 75px;
   font-weight: bold;
+}
+
+.home-container p {
+  color: #05386b;
+  font-size: xx-large;
+}
+
+.design {
+  margin: 15px auto 0;
+  width: 100%;
+  height: auto;
+}
+
+.tools-container {
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+  background: #edf5e1;
+  text-align: center;
+}
+
+.tools-container h1 {
+  color: #05386b;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.tools-container p {
+  margin: 10px;
+}
+
+.about-container {
+  /* height: 100%;
+  width: 100%;
+  text-align: center; */
+  box-sizing: border-box;
+}
+
+.col-container {
+  display: table;
+  width: 100%;
+}
+
+.col {
+  padding: 20px;
+  width: 50%;
+  /* width: 50%;
+  float: left;
+  background: #379683; */
+  display: table-cell;
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .col {
+    display: block;
+    width: 100%;
+  }
+}
+
+.col h1 {
+  color: #edf5e1;
+}
+
+.col p {
+  color: #05386b;
+  font-size: large;
+}
+
+.features img {
+  width: 25%;
 }
