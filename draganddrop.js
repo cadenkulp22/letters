@@ -11,7 +11,7 @@ function init() {
   $('#whiteboard').html( '' );
 
   // removes the active class from each board navigation link
-  $(".boardnav > ul > li > a.active").removeClass("active");
+  $(".boardnav > a.active").removeClass("active");
 
 }
 
@@ -57,7 +57,7 @@ function initBoard(level) {
   $('#whiteboard').html( '' );
 
   // Reset the letters when button is clicked
-  $(".boardnav > ul > li > a.active").removeClass("active");
+  $(".boardnav > a.active").removeClass("active");
 
   // useful variables to make the current board type "active"
   var id = 'board' + level;
@@ -70,7 +70,7 @@ function initBoard(level) {
       $('<div class="row"></div>').attr( 'id', 'row'+(i+1) ).appendTo('#letterBank');
     }
 
-    var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ];
+    var letters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' ];
     // create spaces and actual letter blocks within space div
     for ( var i=0; i<26; i++ ) {
       if (i < 13) {    // first 8 letters: A, B, C, D, E, F, G, H
@@ -102,7 +102,7 @@ function initBoard(level) {
       $('<div class="row"></div>').attr( 'id', 'row'+(i+1) ).appendTo('#letterBank');
     }
 
-    var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'sh', 'th' ];
+    var letters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'sh', 'th' ];
     // create spaces and actual letter blocks within space div
     for ( var i=0; i<28; i++ ) {
       if (i < 13) {    // first 13 letters: A, B, C, D, E, F, G, H, I, J, K, L, M
@@ -147,7 +147,7 @@ function initBoard(level) {
       $('<div class="row"></div>').attr( 'id', 'row'+(i+1) ).appendTo('#letterBank');
     }
 
-    var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'sh', 'th', 'ch', 'ck', 'ee' ];
+    var letters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'sh', 'th', 'ch', 'ck', 'ee' ];
     // create spaces and actual letter blocks within space div
     for ( var i=0; i<31; i++ ) {
       if (i < 13) {    // first 13 letters: A, B, C, D, E, F, G, H, I, J, K, L, M
@@ -203,7 +203,7 @@ function initBoard(level) {
       $('<div class="row"></div>').attr( 'id', 'row'+(i+1) ).appendTo('#letterBank');
     }
 
-    var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'sh', 'th', 'ch', 'ck', 'wh', 'ee', 'er' ];
+    var letters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'sh', 'th', 'ch', 'ck', 'wh', 'ee', 'er' ];
     // create spaces and actual letter blocks within space div
     for ( var i=0; i<33; i++ ) {
       if (i < 13) {    // first 13 letters: A, B, C, D, E, F, G, H, I, J, K, L, M
@@ -269,7 +269,7 @@ function initBoard(level) {
       $('<div class="row"></div>').attr( 'id', 'row'+(i+1) ).appendTo('#letterBank');
     }
 
-    var letters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'sh', 'th', 'ch', 'ck', 'wh', 'ee', 'oi', 'oy', 'ai', 'ay', 'er' ];
+    var letters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'sh', 'th', 'ch', 'ck', 'wh', 'ee', 'oi', 'oy', 'ai', 'ay', 'er' ];
     // create spaces and actual letter blocks within space div
     for ( var i=0; i<37; i++ ) {
       if (i < 13) {    // first 13 letters: A, B, C, D, E, F, G, H, I, J, K, L, M
