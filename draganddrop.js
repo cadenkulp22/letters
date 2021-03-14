@@ -57,7 +57,7 @@ function initBoard(level) {
   $('#whiteboard').html( '' );
 
   // Reset the letters when button is clicked
-  $(".boardnav > ul > li > a.active").removeClass("active");
+  $(".boardnav > a.active").removeClass("active");
 
   // useful variables to make the current board type "active"
   var id = 'board' + level;

@@ -1,6 +1,6 @@
 /* Whiteboard Navigation Bar */
 /* * {
-  box-sizing: border-box
+  box-sizing: border-box;
 } */
 
 .boardnav {
@@ -12,11 +12,11 @@
 
 .boardnav a {
   float: left;
-  padding: 12px;
+  padding: 10px 0;
   color: #edf5e1;
   text-decoration: none;
   font-size: 17px;
-  width: 18.3%; /* 5 links of equal widths */
+  width: 20%; /* 5 links of equal widths */
   text-align: center;
 }
 
@@ -28,7 +28,7 @@
   background-color: #764A34;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   .boardnav a {
     float: none;
     display: block;
