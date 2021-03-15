@@ -17,21 +17,34 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #05386b;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
 }
 
 .topnav a {
-  float: left;
-  display: block;
   color: #edf5e1;
-  text-align: center;
+  /* text-align: center; */
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
 
+#login {
+  background-color: #edf5e1;
+  color: #05386b;
+  font-weight: bold;
+}
+
 .topnav a:hover {
   background-color: #8ee4af;
-  color: black;
+  color: #05386b;
+}
+
+#login:hover {
+  background-color: #8ee4af;
 }
 
 .topnav a.active {
@@ -109,7 +122,7 @@ body {
 .tools-container {
   height: 100%;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 0 50px;
   background: #edf5e1;
   text-align: center;
 }
@@ -120,23 +133,42 @@ body {
   font-weight: bold;
 }
 
+.icons img {
+  padding: 30px 10px 0;
+  width: 75%;
+}
+
+.easy {
+  display: inline-block;
+  width: 20%;
+}
+
+.interactive {
+  display: inline-block;
+  width: 20%;
+}
+
+.educational {
+  display: inline-block;
+  width: 20%;
+}
+
+.fun {
+  display: inline-block;
+  width: 20%;
+}
+
 .tools-container p {
-  margin: 20px;
+  margin: 0 20px;
+  padding: 0 0 40px;
+  color: #05386b;
   font-size: large;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+.icons p {
+  font-size: xx-large;
+  color: #5cdb95;
+}
 
 
 /* ABOUT */
