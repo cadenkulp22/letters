@@ -11,8 +11,8 @@
 }
 
 #x-side, #o-side {
-	width: 25%;
-  height: 520px;
+  margin: 150px 0;
+  width: 25%;
 }
 
 #gameBoard {
