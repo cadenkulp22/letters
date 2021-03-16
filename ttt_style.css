@@ -1,12 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  /* width: 33.33%; */
+  padding: 10px;
+
+}
+
+#x-side, #o-side {
+	width: 25%;
+}
+
+#gameBoard {
+	width: 50%;
+}
+
+/* Clear floats after the columns */
+.content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+	#x-side, #o-side {
+		float: left;
+		width: 100%;
+	}
+	#gameBoard {
+		width: 100%;
+	}
+}
+
 .board  {
-	width: 600px;
-	height: 600px;
+	width: 500px;
+	height: 500px;
 	margin: 0 auto;
   background-color: #34495e;
   color: #fff;
   border: 6px solid #2c3e50;
   border-radius: 10px;
-
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
@@ -14,14 +51,30 @@
 .board-space  {
   border: 6px solid #2c3e50;
   border-radius: 2px;
-  font-family: Helvetica;
-  font-weight: bold;
-  font-size: 4em;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.x-side, .o-side {
+.block {
+  width: 150px;
+  height: 150px;
+  border: 5px solid white;
+  border-radius: 10px;
+  /* margin: 0 auto; */
+  background: white;
+  color: black;
+  font-size: 100px;
+  /*text-shadow: 0 0 3px #000;*/
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;
+}
 
+#x-block {
+	float: right;
+}
+
+#o-block {
+	float: left;
 }
