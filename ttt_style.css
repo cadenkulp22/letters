@@ -12,6 +12,7 @@
 
 #x-side, #o-side {
 	width: 25%;
+  height: 520px;
 }
 
 #gameBoard {
@@ -25,15 +26,27 @@
   clear: both;
 }
 
+#x-block {
+	float: right;
+}
+
+#o-block {
+	float: left;
+}
+
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1050px) {
 	#x-side, #o-side {
-		float: left;
+    float: left;
 		width: 100%;
 	}
 	#gameBoard {
 		width: 100%;
 	}
+  #x-block, #o-block {
+    float: none;
+    margin: 0 auto;
+  }
 }
 
 .board  {
@@ -69,12 +82,4 @@
   text-align: center;
   vertical-align: middle;
   line-height: 150px;
-}
-
-#x-block {
-	float: right;
-}
-
-#o-block {
-	float: left;
 }
