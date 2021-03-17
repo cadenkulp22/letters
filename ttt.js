@@ -1,7 +1,6 @@
 // X = Team 1
 // O = Team 2
 var currTeam = 1;
-var endingTurn = false;
 
 $( init );
 
@@ -33,7 +32,8 @@ function init() {
     } );
   }
 
-  $('#teamO').draggable('disable');
+  // $('#teamO').draggable('disable');
+  $('#teamO').remove();
 
 
 }
@@ -41,7 +41,7 @@ function init() {
 function handleBlockDrop(event, ui) {
   var slotNumber = $(this).data( 'spaceNum' );
   var team = ui.draggable.data( 'team' );
-  createNewBlock(team);
+  //createNewBlock(team);
 
   // if (endingTurn) {
   //   ui.draggable.addClass( 'correct' );
@@ -69,19 +69,21 @@ function createNewBlock(team) {
   }) );
 }
 
-function turnOver(newEndingTurn) {
-  endingTurn = newEndingTurn;
+function changeTurn() {
 
   // swap player turns
   if (currTeam == 1) {
     currTeam = 2;
     $('#turn1').hide();
     $('#turn2').show();
-    $('#teamX').draggable('disable')
+    $('#teamX').draggable('disable');
+    createNewBlock('O');
   }
   else if (currTeam == 2) {
     currTeam = 1;
     $('#turn1').show();
     $('#turn2').hide();
+    $('#teamO').draggable('disable');
+    createNewBlock('X');
   }
 }
