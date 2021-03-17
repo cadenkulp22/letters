@@ -12,28 +12,37 @@
   <body>
 
     <div class="content">
-      <div id="x-side" class="column" style="background-color:#aaa;">
-        <div id="x-block" class="block">
-          X
-        </div>
+
+      <div id="turn1" class="turn">
+        <p>X Turn</p>
       </div>
+      <div id="turn2" class="turn">
+        <p>O Turn</p>
+      </div>
+      <div class="endTurn">
+        <button type="button" class="button" onclick="turnOver(true)">End Turn</button>
+      </div>
+
+      <div id="sideX" class="column" style="background-color:#aaa;">
+
+      </div>
+
+
+
       <div id="gameBoard" class="column" style="background-color:#bbb;">
         <div class="board">
-          <div id="space1" class="board-space"></div>
-          <div id="space2" class="board-space">2</div>
-          <div id="space3" class="board-space">3</div>
-          <div id="space4" class="board-space">4</div>
-          <div id="space5" class="board-space">5</div>
-          <div id="space6" class="board-space">6</div>
-          <div id="space7" class="board-space">7</div>
-          <div id="space8" class="board-space">8</div>
-          <div id="space9" class="board-space">9</div>
+
         </div>
       </div>
-      <div id="o-side" class="column" style="background-color:#ccc;">
-        <div id="o-block" class="block">
-          O
-        </div>
+
+      <div id="sideO" class="column" style="background-color:#ccc;">
+
+      </div>
+
+
+      <div id="gameOver">
+        <h2>You did it!</h2>
+        <button onclick="init()">Play Again</button>
       </div>
     </div>
 
