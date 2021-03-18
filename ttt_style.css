@@ -36,7 +36,7 @@
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 800px) {
 	#sideX, #sideO {
     float: left;
 		width: 100%;
@@ -62,7 +62,7 @@
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
-.board-space  {
+.board-slot  {
   border: 6px solid #2c3e50;
   border-radius: 2px;
   display: flex;
