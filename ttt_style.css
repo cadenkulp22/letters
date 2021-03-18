@@ -1,5 +1,12 @@
 * {
+  font-family: "Comic Sans MS", cursive;
   box-sizing: border-box;
+  /* background-color: #5cdb95; */
+  user-select: none;
+}
+
+.content, #gameOver {
+  background-color: #5cdb95;
 }
 
 /* Create three equal columns that floats next to each other */
@@ -10,7 +17,7 @@
 
 }
 
-#x-side, #o-side {
+#sideX, #sideO {
   margin: 150px 0;
   width: 25%;
 }
@@ -26,24 +33,24 @@
   clear: both;
 }
 
-#x-block {
+#spaceX, #teamX {
 	float: right;
 }
 
-#o-block {
+#spaceO, #teamO {
 	float: left;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 1050px) {
-	#x-side, #o-side {
+	#sideX, #sideO {
     float: left;
 		width: 100%;
 	}
 	#gameBoard {
 		width: 100%;
 	}
-  #x-block, #o-block {
+  #teamX, #teamO {
     float: none;
     margin: 0 auto;
   }
@@ -53,33 +60,128 @@
 	width: 500px;
 	height: 500px;
 	margin: 0 auto;
-  background-color: #34495e;
-  color: #fff;
-  border: 6px solid #2c3e50;
-  border-radius: 10px;
+  /* background-color: #34495e; */
+  color: #5cdb95;  /* make this same as background color */
+  /* border: 6px solid #2c3e50; */
+  /* border-radius: 10px; */
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 }
 
-.board-space  {
-  border: 6px solid #2c3e50;
-  border-radius: 2px;
+.board-slot  {
+  border: 6px solid #05386b;
+  /* border-radius: 2px; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.block {
-  width: 150px;
-  height: 150px;
-  border: 5px solid white;
+#slot0, #slot1, #slot2 {
+  border-top: none;
+}
+
+#slot2, #slot5, #slot8 {
+  border-right: none;
+}
+
+#slot6, #slot7, #slot8 {
+  border-bottom: none;
+}
+
+#slot0, #slot3, #slot6 {
+  border-left: none;
+}
+
+.team, .spaces {
+  width: 170px;
+  height: 170px;
+  /* border: 5px solid white;
   border-radius: 10px;
-  /* margin: 0 auto; */
-  background: white;
-  color: black;
+  margin: 0 auto;
+  background: white; */
+  color: #edf5e1;
   font-size: 100px;
   /*text-shadow: 0 0 3px #000;*/
   text-align: center;
   vertical-align: middle;
-  line-height: 150px;
+  line-height: 170px;
+}
+
+.spaces {
+  display: grid;
+  position: relative;
+  place-items: center;
+  grid-template-areas: "inners";
+  /* background-color: red; */
+}
+
+.team {
+  position: absolute;
+  background: none;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #05386b;
+}
+
+.endTurn {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.button {
+  background-color: #379683;
+  border: 3px solid #379683;
+  color: #edf5e1;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5cdb95;
+  border: 3px solid #5cdb95;
+  color: #edf5e1;
+}
+
+.button:disabled {
+  background: #8ee4af;
+  border: 3px solid #8ee4af;
+  cursor: default;
+}
+
+#gameOver {
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+h2 {
+  color: #05386b;
+}
+
+#gameOverButton {
+  background-color: #05386b;
+  border: 3px solid #05386b;
+  color: #edf5e1;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#gameOverButton:hover {
+  background-color: #0b3e6f;
+  border: 3px solid #0b3e6f;
+  color: #edf5e1;
 }
