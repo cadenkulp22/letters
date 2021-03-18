@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="ttt_style.css">
+    <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
     <script type="text/javascript" src="ttt.js"></script>
   </head>
   <body>
+
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Home</a>
+      <a href="letters.html">Letters</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a class="active" href="tictactoe.html">Tic Tac Toe</a>
+      <a id="login" href="#">LOGIN</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
     <div class="content">
 
@@ -21,30 +34,29 @@
       </div>
       <div class="endTurn">
         <button type="button" class="button" id="turnButton" onclick="changeTurn()">End Turn</button>
-        <!-- <button type="button" class="button" id="turnButton">End Turn</button> -->
       </div>
 
-      <div id="sideX" class="column" style="background-color:#aaa;">
+      <div id="sideX" class="column">
 
       </div>
 
 
 
-      <div id="gameBoard" class="column" style="background-color:#bbb;">
+      <div id="gameBoard" class="column">
         <div class="board">
 
         </div>
       </div>
 
-      <div id="sideO" class="column" style="background-color:#ccc;">
+      <div id="sideO" class="column">
 
       </div>
+    </div>
 
-
-      <div id="gameOver">
-        <h2>You did it!</h2>
-        <button onclick="init()">Play Again</button>
-      </div>
+    <div id="gameOver">
+      <h2 id="x">Team X Wins!!!</h2>
+      <h2 id="o">Team O Wins!!!</h2>
+      <button id="gameOverButton" onclick="init()">Play Again</button>
     </div>
 
   </body>
