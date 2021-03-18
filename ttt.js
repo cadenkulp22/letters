@@ -23,9 +23,9 @@ function init() {
   }
 
   // Create game board slots
-  var boardSpaces = [ 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' ];
-  for ( var i=1; i<=9; i++ ) {
-    $('<div>' + boardSpaces[i-1] + '</div>').data( 'spaceNum', i ).addClass('board-space').appendTo( '.board' ).droppable( {
+  var boardSpaces = [ 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight' ];
+  for ( var i=0; i<9; i++ ) {
+    $('<div>' + boardSpaces[i] + '</div>').data( 'spaceNum', i ).addClass('board-space').appendTo( '.board' ).droppable( {
       accept: '.team',
       hoverClass: 'hovered',
       drop: handleBlockDrop
@@ -54,6 +54,29 @@ function handleBlockDrop(event, ui) {
   ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
   ui.draggable.draggable( 'option', 'revert', false );
 
+  $('#turnButton').click(function() {
+   $(this).data('clicked', true);
+  });
+
+  if($('#turnButton').data('clicked'))  {
+      // swap player turns
+      if (currTeam == 1) {
+        currTeam = 2;
+        $('#turn1').hide();
+        $('#turn2').show();
+        $(this).append(ui.draggable);
+        $('#teamX').draggable('disable');
+        createNewBlock('O');
+      }
+      else if (currTeam == 2) {
+        currTeam = 1;
+        $('#turn1').show();
+        $('#turn2').hide();
+        $('#teamO').draggable('disable');
+        createNewBlock('X');
+      }
+  }
+
 
 }
 
@@ -74,9 +97,10 @@ function changeTurn() {
   // swap player turns
   if (currTeam == 1) {
     currTeam = 2;
+
     $('#turn1').hide();
     $('#turn2').show();
-    $('#teamX').draggable('disable');
+    $('.team').draggable('disable');
     createNewBlock('O');
   }
   else if (currTeam == 2) {
