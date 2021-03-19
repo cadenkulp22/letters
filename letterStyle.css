@@ -95,18 +95,22 @@
 }
 
 #row3 {
-  width: 1040px;     /* dummy input */
+  float: left;
+  width: 80px;     /* dummy input */
+  height: 80px;
   margin: 0 auto;
 }
 
 #row4 {
-  float: left;
-  width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+  float: right;
+  margin: auto;
+  width: 320px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
   height: 80px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
 }
 
 #row5 {
-  float: right;
+  /* float: right; */
+  margin: 0 auto;
   width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
   height: 80px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
 }
@@ -154,7 +158,7 @@
   border: 10px solid #FF2400;
 }
 
-#spaceer, #letterer, #letterercorrect   {
+#spaceer, #letterer, #letterercorrect, #spaceur, #letterur, #letterurcorrect, #spaceir, #letterir, #letterircorrect   {
   background: white;
   color: purple;
   border: 10px solid purple;
