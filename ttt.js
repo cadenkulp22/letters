@@ -9,8 +9,11 @@ $( init );
 
 function init() {
 
+  // ensure gameOver overlay is off
+  document.getElementById("gameOver").style.display = "none";
+
   $('.endTurn').show();
-  $('#gameOver').hide();
+  // $('#gameOver').hide();
   $('#turnO').hide();
   document.getElementById("turnButton").disabled = true;
 
@@ -214,13 +217,17 @@ function checkGameOver() {
   }
 
   if ( gameOver ) {
-    $('#gameOver').show();
+    // $('#gameOver').show();
     $(winner).show();
     $(loser).hide();
     $('#teamX').remove();
     $('#teamO').remove();
-    $('#turnX').hide();
-    $('#turnO').hide();
-    $('.endTurn').hide();
+    // $('#turnX').hide();
+    // $('#turnO').hide();
+    // $('.endTurn').hide();
+    document.getElementById("turnButton").disabled = true;
+
+    // show the overlay when game is over
+    document.getElementById("gameOver").style.display = "block";
   }
 }
