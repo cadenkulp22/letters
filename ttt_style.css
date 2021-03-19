@@ -208,3 +208,27 @@ h2 {
   border: 3px solid #0b3e6f;
   color: #edf5e1;
 }
+
+#cancel {
+  background-color: #05386b;
+  border: 3px solid #05386b;
+  color: #edf5e1;
+  padding: 5px 5px;
+  /* text-align: center;
+  text-decoration: none;
+  display: inline-block; */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+#cancel:hover {
+  background-color: #0b3e6f;
+  border: 3px solid #0b3e6f;
+  color: #edf5e1;
+}

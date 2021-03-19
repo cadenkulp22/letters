@@ -121,6 +121,7 @@ function changeTurn() {
 
 function checkGameOver() {
   var gameOver = false;
+  var tie = false;
   var winner;
   var loser;
 
@@ -215,11 +216,23 @@ function checkGameOver() {
       loser = '#x';
     }
   }
+  else if ( (boardSlots[0] !== 'zero') && (boardSlots[1] !== 'one') && (boardSlots[2] !== 'two') && (boardSlots[3] !== 'three') && (boardSlots[4] !== 'four') && (boardSlots[5] !== 'five') && (boardSlots[6] !== 'six') && (boardSlots[7] !== 'seven') && (boardSlots[8] !== 'eight') ) {
+    gameOver = true;
+    tie = true;
+  }
 
   if ( gameOver ) {
     // $('#gameOver').show();
-    $(winner).show();
-    $(loser).hide();
+    if ( tie ) {
+      $('#tie').show()
+      $('#x').hide();
+      $('#o').hide();
+    }
+    else {
+      $(winner).show();
+      $(loser).hide();
+      $('#tie').hide();
+    }
     $('#teamX').remove();
     $('#teamO').remove();
     // $('#turnX').hide();
@@ -230,4 +243,8 @@ function checkGameOver() {
     // show the overlay when game is over
     document.getElementById("gameOver").style.display = "block";
   }
+}
+
+function cancel() {
+  document.getElementById("gameOver").style.display = "none";
 }
