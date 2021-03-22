@@ -16,7 +16,7 @@
   color: #edf5e1;
   text-decoration: none;
   font-size: 17px;
-  width: 20%; /* 5 links of equal widths */
+  width: 7.6923%; /* 13 links of equal widths */
   text-align: center;
 }
 
@@ -43,7 +43,7 @@
 #content {
   font-family: "Comic Sans MS", cursive;
 
-  margin: 10px auto;
+  margin: 0 auto 10px;
   width: auto;
   min-width: 1000px;
   -webkit-user-select: none; /* Safari */
@@ -51,6 +51,7 @@
   user-select: none; /* Standard syntax */
   background-image: url("images/chalkboard.jpg");
   background-size: cover;
+  /* background: #379683; */
   border: 20px solid #764A34;
 }
 
@@ -95,20 +96,34 @@
 }
 
 #row3 {
-  width: 1040px;     /* dummy input */
+  float: left;
+  width: 80px;
+  height: 80px;
   margin: 0 auto;
 }
 
 #row4 {
-  float: left;
+  float: right;
   width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
   height: 80px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
 }
 
 #row5 {
-  float: right;
+  margin: 0 auto;
   width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
   height: 80px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+}
+
+#row6 {
+  float: left;
+  width: 80px;    /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+  height: 240px;   /* 5 (margin) + 10 (border) + 50 (height of letter block) + 10 + 5 */
+}
+
+#row7 {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
 }
 
 /* Individual cards and slots */
@@ -142,10 +157,43 @@
   border: 10px solid #FF2400;
 }
 
-#spaceer, #letterer, #letterercorrect   {
+#spaceer, #letterer, #letterercorrect, #spaceur, #letterur, #letterurcorrect, #spaceir, #letterir, #letterircorrect   {
   background: white;
   color: purple;
   border: 10px solid purple;
+}
+
+#spacear, #letterar, #letterarcorrect, #spaceor, #letteror, #letterorcorrect   {
+  background: white;
+  color: gold;
+  border: 10px solid gold;
+}
+
+#spacetch, #lettertch, #lettertchcorrect {
+  font-size: 30px;
+}
+
+#spaceow, #letterow, #letterowcorrect, #spaceou, #letterou, #letteroucorrect, #spaceough, #letterough, #letteroughcorrect, #spaceea, #letterea, #lettereacorrect, #spaceoa, #letteroa, #letteroacorrect {
+  background: white;
+  color: #FF2400;
+  border: 10px solid #FF2400;
+}
+
+#spaceough, #letterough, #letteroughcorrect {
+  font-size: 20px;
+}
+
+#spaceear, #letterear, #letterearcorrect {
+  font-size: 30px;
+  background: white;
+  color: purple;
+  border: 10px solid purple;
+}
+
+#spaceoo, #letteroo, #letteroocorrect {
+  background: white;
+  color: #FF2400;
+  border: 10px solid #FF2400;
 }
 
 /*
@@ -176,7 +224,7 @@
 
 /* Style eraser "button" */
 .eraser {
-  float: right;
+  float: left;
   background-color: #333;
   border-color: #333;
   border-radius: 6px;
