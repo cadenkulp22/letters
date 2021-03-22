@@ -51,6 +51,7 @@
   user-select: none; /* Standard syntax */
   background-image: url("images/chalkboard.jpg");
   background-size: cover;
+  /* background: #379683; */
   border: 20px solid #764A34;
 }
 
@@ -164,7 +165,7 @@
 
 #spacear, #letterar, #letterarcorrect, #spaceor, #letteror, #letterorcorrect   {
   background: white;
-  color: yellow;
+  color: gold;
   border: 10px solid gold;
 }
 
