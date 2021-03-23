@@ -1,0 +1,115 @@
+
+#content {
+  font-family: "Comic Sans MS", cursive;
+  margin: 20px 70px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#fractionBlocks {
+  float: left;
+  width: 400px;
+  background-color: red;
+}
+
+.fcol {
+  width: 120px;
+  float: left;
+}
+
+.fractBlocks, .spaces {
+  margin: 20px;
+  width: 100px;
+  /* border: 5px solid black; */
+  background: white;
+  color: black;
+  font-size: 20px;
+  /*text-shadow: 0 0 3px #000;*/
+  text-align: center;
+  vertical-align: middle;
+}
+
+#space0, #block0 {  /* 1/2 */
+  height: 300px;
+  line-height: 300px;
+}
+
+#space5, #block5 {  /* 1/8 */
+  height: 75px;
+  line-height: 75px;
+}
+
+#space1, #block1 {  /* 1/3 */
+  height: 200px;
+  line-height: 200px;
+}
+
+#space4, #block4 {  /* 1/6 */
+  height: 100px;
+  line-height: 100px;
+}
+
+#space7, #block7 {  /* 1/12 */
+  height: 50px;
+  line-height: 50px;
+}
+
+#space2, #block2 {  /* 1/4 */
+  height: 150px;
+  line-height: 150px;
+}
+
+#space3, #block3 {  /* 1/5 */
+  height: 120px;
+  line-height: 120px;
+}
+
+#space6, #block6 {  /* 1/10 */
+  height: 60px;
+  line-height: 60px;
+}
+
+.spaces {
+  display: grid;
+  position: relative;
+  place-items: center;
+  grid-template-areas: "inners";
+}
+
+.fractBlocks {
+  position: absolute;
+  grid-area: inners;
+}
+
+#problem {
+  float: right;
+  width: 200px;
+  height: 600px;
+  background: #ddf;
+}
+
+#problemSlot {
+  width: 100px;
+  margin: 0 auto;
+  background: white;
+  color: black;
+  font-size: 20px;
+  /*text-shadow: 0 0 3px #000;*/
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* #cardSlots, #cardPile {
+  width: 910px;
+  height: 120px;
+  padding: 20px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+} */
