@@ -1,7 +1,7 @@
 
 #content {
   font-family: "Comic Sans MS", cursive;
-  margin: 20px 70px;
+  margin: 20px 400px;
   text-align: center;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -15,16 +15,17 @@
 }
 
 .fcol {
-  width: 120px;
+  width: 100px;
   float: left;
+  margin: 10px;
 }
 
 .fractBlocks, .spaces {
-  margin: 20px;
+  margin: 14px;
   width: 100px;
   /* border: 5px solid black; */
-  background: white;
-  color: black;
+  background: green;
+  color: white;
   font-size: 20px;
   /*text-shadow: 0 0 3px #000;*/
   text-align: center;
@@ -85,16 +86,16 @@
 
 #problem {
   float: right;
-  width: 200px;
+  width: 100px;
   height: 600px;
   background: #ddf;
 }
 
 #problemSlot {
   width: 100px;
-  margin: 0 auto;
-  background: white;
-  color: black;
+  margin: auto;
+  background: blue;
+  color: white;
   font-size: 20px;
   /*text-shadow: 0 0 3px #000;*/
   text-align: center;

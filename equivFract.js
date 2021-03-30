@@ -55,16 +55,25 @@ function init() {
     }
   }
 
-  // Create the card slots
+  // variables for the actual fraction problem
   var problems = [ '2/4' ];
-  for ( var i=0; i<1; i++ ) {
-    $('<div>' + problems[i] + '</div>').data( 'problem', i ).attr( 'id', 'problemSlot' ).appendTo( '#problem' ).droppable( {
-      accept: '#fractionBlocks div',
-      hoverClass: 'hovered',
-      drop: handleCardDrop
-    } );
-  }
+  var probNums = problems[0].split("/");    // split the string on the division sign (/) to get the numerator and denomerator
+  var numerator = parseInt(probNums[0]);    // grab the numerator as an int
+  var denomenator = parseInt(probNums[1]);  // grab the denomenator as an int
 
+  // create problem block
+  $('<div>' + problems[0] + '</div>').data( 'problem', problems[0] ).attr( 'id', 'problemSlot' ).appendTo( '#problem' ).droppable( {
+    accept: '#fractionBlocks div',
+    hoverClass: 'hovered',
+    drop: handleCardDrop
+  } );
+
+  // style the fraction problem block to appropriate dimensions
+  var probHeight = (600 / denomenator) * numerator;
+  var probMarginTop = 600 - probHeight;
+  document.getElementById("problemSlot").style.height = probHeight + "px";
+  document.getElementById("problemSlot").style.lineHeight = probHeight + "px";
+  document.getElementById("problemSlot").style.marginTop = probMarginTop + "px";
 }
 
 function handleCardDrop( event, ui ) {
@@ -79,7 +88,7 @@ function handleCardDrop( event, ui ) {
   ui.draggable.addClass( 'correct' );
   ui.draggable.draggable( 'disable' );
   $(this).droppable( 'disable' );
-  ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+  // ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
   ui.draggable.draggable( 'option', 'revert', false );
 
 }
